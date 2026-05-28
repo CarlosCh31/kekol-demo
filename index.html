@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Decibel — Escuche las señales reales de su negocio. Diagnóstico simple para PYMES en menos de 2 minutos." />
+<meta name="description" content="Decibel — Escuche las señales reales de su negocio. Diagnóstico gratis para PYMES ticas en menos de 2 minutos." />
+<meta name="theme-color" content="#2f6bff">
 <title>Decibel — De ruido a decisión</title>
+
+<!-- Open Graph (WhatsApp / redes sociales) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Decibel — Escuche las señales de su negocio">
+<meta property="og:description" content="Diagnóstico gratis en 2 minutos. Sepa dónde gana y dónde se le va la plata. Para PYMES en Costa Rica.">
+<meta property="og:image" content="assets/logo.svg">
+<meta property="og:locale" content="es_CR">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,10 +99,10 @@
   .nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 0;transition:background .3s var(--ease), backdrop-filter .3s var(--ease), box-shadow .3s var(--ease)}
   .nav.scrolled{background:rgba(255,255,255,.78);backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between}
-  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
   .logo-mark{
-    width:34px;height:34px;display:block;border-radius:10px;
-    box-shadow:0 8px 20px rgba(47,107,255,.35);
+    width:36px;height:36px;display:block;border-radius:12px;
+    box-shadow:0 10px 24px rgba(28,63,176,.22);
   }
   .nav-links{display:flex;gap:1.6rem;align-items:center}
   .nav-links a{font-size:.94rem;color:var(--ink-soft);font-weight:500;transition:color .2s}
@@ -356,6 +366,275 @@
   }
   @keyframes tickPop{0%{transform:scale(0) rotate(-30deg)}60%{transform:scale(1.15) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
 
+  /* Trust bar */
+  .trustbar{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}
+  .trustbar-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;font-size:.86rem;color:var(--ink-soft);font-weight:500}
+  .trustbar-inner span{display:inline-flex;align-items:center;gap:.45rem}
+  .trustbar-inner svg{color:var(--accent);width:14px;height:14px;flex:none}
+  .trustbar .free{color:var(--accent);font-weight:700}
+
+  /* Hero vol hint */
+  .signal-card .vol-hint{font-size:.82rem;color:var(--muted);margin:-4px 0 4px;font-weight:500}
+  .signal-card .vol-hint b{color:var(--warn);font-weight:700}
+
+  /* Sectors */
+  .sectors{background:#fff}
+  .sectors .head{text-align:center;max-width:680px;margin:0 auto 40px}
+  .sector-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  @media(max-width:900px){.sector-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.sector-grid{grid-template-columns:repeat(2,1fr)}}
+  .sector{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 12px;text-align:center;transition:all .3s var(--ease);
+  }
+  .sector:hover{transform:translateY(-4px);background:#fff;border-color:rgba(47,107,255,.25);box-shadow:var(--shadow-sm)}
+  .sector svg{width:28px;height:28px;margin:0 auto 8px;color:var(--brand);display:block}
+  .sector span{font-size:.85rem;font-weight:600;color:var(--ink-soft);display:block;line-height:1.25}
+
+  /* Testimonios */
+  .testi{background:#fff}
+  .testi .head{text-align:center;max-width:680px;margin:0 auto 48px}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+  .testi-card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s;
+  }
+  .testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);background:#fff}
+  .testi-card .quote{font-size:1rem;color:var(--ink);font-weight:500;line-height:1.55;margin-bottom:18px}
+  .testi-card .quote::before{content:"\201C";font-family:'Space Grotesk';font-size:3.4rem;line-height:0;color:var(--brand);opacity:.4;margin-right:4px;vertical-align:-1.2rem}
+  .testi-author{display:flex;align-items:center;gap:12px}
+  .avatar{
+    width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:.95rem;flex:none;
+  }
+  .avatar.a1{background:linear-gradient(135deg,#2f6bff,#7aa2ff)}
+  .avatar.a2{background:linear-gradient(135deg,#22d3a5,#0a8f6c)}
+  .avatar.a3{background:linear-gradient(135deg,#ff9f43,#ff5a7a)}
+  .testi-author .who{display:flex;flex-direction:column;line-height:1.2}
+  .testi-author .who strong{font-size:.93rem;color:var(--ink)}
+  .testi-author .who small{font-size:.8rem;color:var(--muted)}
+
+  /* Quiénes somos */
+  .about{background:var(--bg-soft)}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;text-align:center}}
+  .about-portrait{
+    aspect-ratio:1;max-width:320px;width:100%;margin:0 auto;position:relative;
+    border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);
+    background:linear-gradient(135deg,#2f6bff,#1c3fb0 55%,#22d3a5);
+  }
+  .about-portrait svg{position:absolute;inset:0;width:100%;height:100%}
+  .about-flag{
+    position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:.45rem;
+    background:rgba(255,255,255,.95);padding:.35rem .7rem;border-radius:999px;
+    font-size:.76rem;font-weight:700;color:var(--ink);z-index:2;box-shadow:var(--shadow-sm);
+  }
+  .flag-cr{width:18px;height:12px;border-radius:2px;border:1px solid rgba(0,0,0,.08);overflow:hidden;display:inline-block;background:
+    linear-gradient(to bottom,#fff 0 20%,#0033a0 20% 40%,#cf142b 40% 60%,#0033a0 60% 80%,#fff 80%)}
+  .about-side h2 .ink-accent{color:var(--brand)}
+  .about-side p{margin-top:.6rem}
+  .about-signature{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-style:italic;color:var(--muted);font-size:.9rem}
+  .about-signature strong{color:var(--ink);font-style:normal}
+
+  /* FAQ */
+  .faq{background:#fff}
+  .faq .head{text-align:center;max-width:680px;margin:0 auto 40px}
+  .faq-list{max-width:760px;margin:0 auto;display:grid;gap:10px}
+  .faq-item{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:border-color .25s, background .25s, box-shadow .25s;
+  }
+  .faq-item[open]{background:#fff;border-color:rgba(47,107,255,.3);box-shadow:var(--shadow-sm)}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:18px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    font-weight:600;color:var(--ink);font-size:1rem;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .faq-plus{
+    width:28px;height:28px;border-radius:50%;background:rgba(47,107,255,.1);
+    display:grid;place-items:center;color:var(--brand);transition:transform .3s var(--ease), background .3s;flex:none;
+  }
+  .faq-item[open] .faq-plus{transform:rotate(45deg);background:var(--brand);color:#fff}
+  .faq-body{padding:0 22px 20px;color:var(--ink-soft);font-size:.95rem;line-height:1.6}
+
+  /* Producto */
+  .product-design{
+    background:
+      radial-gradient(700px 280px at 80% 18%, rgba(47,107,255,.09), transparent 60%),
+      radial-gradient(580px 240px at 10% 82%, rgba(34,211,165,.09), transparent 60%),
+      linear-gradient(180deg,#fff 0%, #f8fbff 100%);
+  }
+  .product-grid{display:grid;grid-template-columns:.94fr 1.06fr;gap:54px;align-items:center}
+  @media(max-width:920px){.product-grid{grid-template-columns:1fr}}
+  .product-copy p{max-width:560px}
+  .product-stack{display:grid;gap:14px;margin-top:26px}
+  .product-feature{
+    display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+    background:rgba(255,255,255,.82);backdrop-filter:blur(8px);border:1px solid var(--line);
+    border-radius:18px;padding:16px 18px;box-shadow:var(--shadow-sm);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .product-feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .product-feature .picon{
+    width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,rgba(47,107,255,.12),rgba(34,211,165,.18));color:var(--brand);
+  }
+  .product-feature strong{display:block;font-size:1rem;color:var(--ink);margin-bottom:4px}
+  .product-feature p{font-size:.92rem;color:var(--muted)}
+  .product-shell{
+    position:relative;background:linear-gradient(135deg,#0f1734,#15224b 58%,#1e4fdf);
+    border-radius:30px;padding:22px;box-shadow:var(--shadow-lg);overflow:hidden;
+  }
+  .product-shell::before{
+    content:"";position:absolute;inset:auto -50px -90px auto;width:220px;height:220px;
+    background:radial-gradient(closest-side, rgba(34,211,165,.28), transparent 70%);pointer-events:none;
+  }
+  .product-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+  .product-brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .product-brand .logo-mark{width:40px;height:40px;box-shadow:none}
+  .product-brand strong{display:block;font-family:'Space Grotesk';font-size:1rem;line-height:1}
+  .product-brand span{display:block;font-size:.78rem;color:rgba(255,255,255,.62);margin-top:4px}
+  .product-pill{
+    padding:.45rem .8rem;border-radius:999px;font-size:.74rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;background:rgba(255,255,255,.12);color:#dce7ff;
+  }
+  .product-board{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+  @media(max-width:560px){.product-board{grid-template-columns:1fr}}
+  .product-panel{background:rgba(255,255,255,.96);border-radius:22px;padding:18px;border:1px solid rgba(255,255,255,.2)}
+  .product-panel h4{font-size:.95rem;margin-bottom:12px}
+  .product-kpi{display:flex;justify-content:space-between;gap:14px;align-items:end;margin-bottom:18px}
+  .product-kpi .big{font-family:'Space Grotesk';font-size:2.4rem;line-height:1;color:var(--ink)}
+  .product-kpi small{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .product-kpi p{font-size:.88rem;max-width:210px}
+  .product-bars{display:grid;gap:12px}
+  .product-bar{display:grid;grid-template-columns:72px 1fr 36px;gap:10px;align-items:center;font-size:.84rem;font-weight:600;color:var(--ink-soft)}
+  .product-track{height:10px;border-radius:999px;background:var(--bg-pale);overflow:hidden}
+  .product-fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--brand),var(--accent))}
+  .product-fill.warn{background:linear-gradient(90deg,var(--warn),#ffd36e)}
+  .product-fill.danger{background:linear-gradient(90deg,var(--danger),#ff8ba3)}
+  .product-actions{list-style:none;display:grid;gap:10px;margin-bottom:14px}
+  .product-actions li{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--ink-soft)}
+  .product-actions .check{margin-top:2px;flex:none}
+  .product-mini{background:var(--bg-soft);border-radius:16px;padding:14px}
+  .product-mini strong{display:block;font-size:.88rem;color:var(--ink);margin-bottom:6px}
+  .product-mini p{font-size:.85rem;color:var(--muted)}
+
+  /* Quiz result dual CTAs */
+  .result-ctas{display:flex;flex-direction:column;gap:14px;max-width:440px;margin:0 auto}
+  .result-divider{
+    display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.4);font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.15em;font-weight:600;
+  }
+  .result-divider::before,.result-divider::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.12)}
+  .result-book-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.85rem 1.2rem;border-radius:999px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);color:#fff;font-weight:600;font-size:.95rem;
+    transition:all .25s var(--ease);
+  }
+  .result-book-btn:hover{background:rgba(122,162,255,.18);border-color:var(--brand-2);transform:translateY(-2px)}
+
+  /* Book tabs + quick contact */
+  .book-tabs{display:flex;gap:6px;background:var(--bg-soft);padding:6px;border-radius:999px;margin-bottom:20px}
+  .book-tab{
+    flex:1;padding:.6rem .8rem;border-radius:999px;font-weight:600;font-size:.88rem;
+    color:var(--ink-soft);transition:all .25s var(--ease);text-align:center;
+  }
+  .book-tab.active{background:#fff;color:var(--brand);box-shadow:var(--shadow-sm)}
+  .book-pane{display:none}
+  .book-pane.active{display:block;animation:fadeUp .4s var(--ease)}
+  .quick-actions{display:grid;gap:12px;margin-top:6px}
+  .quick-btn{
+    display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:var(--radius);
+    border:1px solid var(--line);background:#fff;text-align:left;width:100%;
+    transition:all .25s var(--ease);text-decoration:none;color:inherit;
+  }
+  .quick-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}
+  .quick-btn .qicon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;color:#fff;flex:none}
+  .quick-btn.wa .qicon{background:#25D366}
+  .quick-btn.mail .qicon{background:var(--brand)}
+  .quick-btn .qtext{display:flex;flex-direction:column;line-height:1.3}
+  .quick-btn .qtext strong{font-size:.98rem;color:var(--ink)}
+  .quick-btn .qtext small{font-size:.85rem;color:var(--muted)}
+
+  /* WhatsApp FAB */
+  .wa-fab{
+    position:fixed;right:18px;bottom:18px;z-index:45;
+    width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+    display:grid;place-items:center;box-shadow:0 14px 30px rgba(37,211,102,.4);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .wa-fab:hover{transform:scale(1.08) rotate(-4deg);box-shadow:0 18px 40px rgba(37,211,102,.55)}
+  .wa-fab svg{width:30px;height:30px}
+  .wa-fab::after{
+    content:"";position:absolute;inset:-6px;border-radius:50%;
+    border:2px solid rgba(37,211,102,.5);animation:waPulse 2s var(--ease) infinite;
+  }
+  @keyframes waPulse{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.4);opacity:0}}
+  .wa-tip{
+    position:absolute;right:72px;top:50%;transform:translateY(-50%) translateX(8px);
+    background:#fff;color:var(--ink);padding:.55rem .9rem;border-radius:12px;
+    font-size:.85rem;font-weight:600;white-space:nowrap;box-shadow:var(--shadow-md);
+    opacity:0;pointer-events:none;transition:opacity .25s, transform .25s var(--ease);
+  }
+  .wa-fab:hover .wa-tip{opacity:1;transform:translateY(-50%) translateX(0)}
+  @media(max-width:760px){
+    .wa-fab{bottom:84px}
+    .wa-tip{display:none}
+  }
+
+  /* Footer enhanced */
+  footer{padding:0;border-top:none;background:#0e1530;color:rgba(255,255,255,.7);font-size:.9rem}
+  .footer-top{padding:56px 0 36px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  @media(max-width:760px){.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+  .footer-brand .logo{color:#fff}
+  .footer-brand p{color:rgba(255,255,255,.55);font-size:.88rem;margin-top:12px;max-width:280px}
+  .footer-col h5{
+    font-family:'Space Grotesk';font-size:.78rem;font-weight:700;color:#fff;
+    text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;
+  }
+  .footer-col ul{list-style:none;display:grid;gap:8px}
+  .footer-col a{color:rgba(255,255,255,.65);transition:color .2s;display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem}
+  .footer-col a:hover{color:#fff}
+  .footer-col a svg{width:16px;height:16px;flex:none}
+  .footer-col .social{display:flex;gap:8px;margin-top:4px}
+  .footer-col .social a{
+    width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.06);
+    display:grid;place-items:center;
+  }
+  .footer-col .social a:hover{background:var(--brand);color:#fff}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);padding:18px 0;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    color:rgba(255,255,255,.5);font-size:.82rem;
+  }
+  .footer-bottom .made{display:inline-flex;align-items:center;gap:.45rem}
+  .footer-bottom .made .flag-cr{width:16px;height:11px}
+
+  /* Modal */
+  .modal{
+    position:fixed;inset:0;background:rgba(8,12,28,.55);backdrop-filter:blur(6px);
+    z-index:80;display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .modal.open{display:flex;animation:fadeUp .25s var(--ease)}
+  .modal-card{
+    background:#fff;border-radius:var(--radius-lg);max-width:560px;width:100%;
+    max-height:85vh;overflow:auto;padding:32px;box-shadow:var(--shadow-lg);position:relative;
+  }
+  .modal-card h3{margin-bottom:14px;font-size:1.4rem}
+  .modal-card h4{margin-top:18px;margin-bottom:6px;font-size:1rem}
+  .modal-card p,.modal-card li{font-size:.92rem;color:var(--ink-soft);line-height:1.6}
+  .modal-card ul{padding-left:18px;display:grid;gap:6px;margin:6px 0}
+  .modal-close{
+    position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+    background:var(--bg-soft);display:grid;place-items:center;color:var(--ink-soft);
+    transition:background .2s, color .2s;
+  }
+  .modal-close:hover{background:var(--ink);color:#fff}
+
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation:none !important;transition:none !important}
     .reveal{opacity:1;transform:none}
@@ -367,23 +646,28 @@
 <!-- Reusable SVG logo symbols -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="sym-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2f6bff"/>
-      <stop offset="1" stop-color="#1c3fb0"/>
-    </linearGradient>
-    <linearGradient id="sym-wave" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#ffffff"/>
+    <linearGradient id="sym-bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1e4fdf"/>
+      <stop offset=".58" stop-color="#2f6bff"/>
       <stop offset="1" stop-color="#22d3a5"/>
     </linearGradient>
+    <radialGradient id="sym-sheen" cx="0" cy="0" r="1" gradientTransform="translate(20 16) rotate(43) scale(42 38)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sym-mark" x1="18" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".72" stop-color="#ecf5ff"/>
+      <stop offset="1" stop-color="#c9ffef"/>
+    </linearGradient>
     <symbol id="logo-mark" viewBox="0 0 64 64">
-      <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#sym-bg)"/>
-      <g stroke="url(#sym-wave)" stroke-width="3.4" stroke-linecap="round" fill="none">
-        <line x1="14" y1="32" x2="14" y2="32"/>
-        <line x1="22" y1="24" x2="22" y2="40"/>
-        <line x1="30" y1="18" x2="30" y2="46"/>
-        <line x1="38" y1="14" x2="38" y2="50"/>
-        <line x1="46" y1="22" x2="46" y2="42"/>
-        <line x1="54" y1="28" x2="54" y2="36"/>
+      <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#sym-bg)"/>
+      <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#sym-sheen)"/>
+      <g fill="none" stroke="url(#sym-mark)" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 18v28" stroke-width="6.5"/>
+        <path d="M26 18C38.5 18 46 23.6 46 32S38.5 46 26 46" stroke-width="5.5"/>
+        <path d="M26 24.5C34.2 24.5 39.5 27.4 39.5 32S34.2 39.5 26 39.5" stroke-width="4.5" opacity=".92"/>
+        <path d="M26 29C30.6 29 33.5 30.3 33.5 32S30.6 35 26 35" stroke-width="3.8" opacity=".82"/>
       </g>
     </symbol>
   </defs>
@@ -396,7 +680,7 @@
       Decibel
     </a>
     <div class="nav-links">
-      <a href="#familiar">¿Le suena?</a>
+      <a href="#familiar">Señales comunes</a>
       <a href="#diagnostico">Diagnóstico</a>
       <a href="#como">Cómo funciona</a>
       <a href="#reporte">Reporte</a>
@@ -444,6 +728,7 @@
       <div class="signal-card" role="img" aria-label="Tarjeta de volumen del negocio de ejemplo">
         <h4>Volumen del negocio</h4>
         <div class="vol">72<small>dB</small></div>
+        <div class="vol-hint">Señal moderada — <b>hay espacio para mejorar</b></div>
         <canvas class="wave-canvas" id="wave" width="400" height="120" aria-hidden="true"></canvas>
         <div class="signal-rows">
           <div class="signal-row"><span class="tag"><span class="dot g"></span> Producto top en ganancia</span><span class="val">Café 250g</span></div>
@@ -459,10 +744,20 @@
   </div>
 </header>
 
+<!-- ============ TRUST BAR ============ -->
+<section class="trustbar" aria-label="Garantías">
+  <div class="container trustbar-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg> <strong class="free">Primera consulta sin costo</strong></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg> Sin tarjeta de crédito</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg> Sus datos no se comparten</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg> Hecho en Costa Rica 🇨🇷</span>
+  </div>
+</section>
+
 <section class="familiar" id="familiar">
   <div class="container">
     <div class="head">
-      <span class="eyebrow reveal">¿Le suena familiar?</span>
+      <span class="eyebrow reveal">Señales comunes</span>
       <h2 class="reveal d1">Si alguna de estas preguntas le incomoda, Decibel puede ayudarle.</h2>
       <p class="reveal d2">No es falta de trabajo. Es falta de señales claras.</p>
     </div>
@@ -491,6 +786,25 @@
         <p>Decidir tarde también cuesta.</p>
         <div class="mini-wave"></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTORES ============ -->
+<section class="sectors" id="sectores">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow reveal">Para todo tipo de negocio</span>
+      <h2 class="reveal d1">Si su negocio vende, compra o atiende clientes, Decibel le escucha.</h2>
+      <p class="reveal d2">No importa el tamaño ni si lleva cuentas en cuaderno o Excel.</p>
+    </div>
+    <div class="sector-grid">
+      <div class="sector reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V10M20 21V10M4 10h16M6 10V6a2 2 0 012-2h8a2 2 0 012 2v4M9 14h6M9 17h6"/></svg><span>Sodas y restaurantes</span></div>
+      <div class="sector reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v6m0 0a4 4 0 00-4 4v4a2 2 0 002 2h4a2 2 0 002-2v-4a4 4 0 00-4-4zM9 3l3 6 3-6"/></svg><span>Salones y barberías</span></div>
+      <div class="sector reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 17h2M9 17h6M19 17h2M5 17v-5l2-5h10l3 5v5"/></svg><span>Talleres y mecánicas</span></div>
+      <div class="sector reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18l-2 13H5L3 7zM8 7V5a4 4 0 018 0v2"/></svg><span>Pulperías y mini-súper</span></div>
+      <div class="sector reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 7h6M9 11h6M9 15h4M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg><span>Servicios profesionales</span></div>
+      <div class="sector reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Emprendimientos en línea</span></div>
     </div>
   </div>
 </section>
@@ -527,10 +841,14 @@
         <h3 id="resultTitle">Su negocio está hablando a este volumen</h3>
         <p class="desc" id="resultDesc"></p>
         <div class="result-meter"><div class="result-meter-fill" id="resultMeter"></div></div>
-        <form class="lead-form" id="leadForm" novalidate>
-          <input type="email" id="email" placeholder="correo@sunegocio.com" required aria-label="Correo electrónico" />
-          <button class="btn" type="submit">Enviar mi diagnóstico</button>
-        </form>
+        <div class="result-ctas">
+          <form class="lead-form" id="leadForm" novalidate>
+            <input type="email" id="email" placeholder="correo@sunegocio.com" required aria-label="Correo electrónico" />
+            <button class="btn" type="submit">Enviar mi diagnóstico</button>
+          </form>
+          <div class="result-divider">o</div>
+          <a href="#agendar" class="result-book-btn">Agendar una cita gratis con un asesor →</a>
+        </div>
         <div class="thanks" id="thanks">
           Listo. Ya recibimos sus respuestas. Ahora vamos a convertir ese ruido en una señal más clara.
         </div>
@@ -600,6 +918,77 @@
   </div>
 </section>
 
+<!-- ============ TESTIMONIOS ============ -->
+<section class="testi" id="testimonios">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow reveal">Testimonios</span>
+      <h2 class="reveal d1">PYMES ticas que cambiaron el ruido por señal.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal d1">
+        <p class="quote">Yo creía que mi soda andaba bien porque siempre había gente. El reporte me mostró que el desayuno me daba pérdida. Cambié dos cosas del menú y en un mes ya se notó.</p>
+        <div class="testi-author"><div class="avatar a1">MF</div><div class="who"><strong>María Fernández</strong><small>Soda La Familia · Heredia</small></div></div>
+      </div>
+      <div class="testi-card reveal d2">
+        <p class="quote">Lo que más me sirvió fue que me hablan claro, sin tecnicismos. Me dijeron exactamente en qué cliente estaba perdiendo plata y por qué. Eso vale oro.</p>
+        <div class="testi-author"><div class="avatar a2">CV</div><div class="who"><strong>Carlos Vargas</strong><small>Taller Vargas e Hijos · Alajuela</small></div></div>
+      </div>
+      <div class="testi-card reveal d3">
+        <p class="quote">El diagnóstico fue gratis y honestamente pensé que iba a ser un truco para venderme algo caro. Para nada. Me dieron consejos que pude aplicar yo misma esa misma semana.</p>
+        <div class="testi-author"><div class="avatar a3">AS</div><div class="who"><strong>Ana Solís</strong><small>Boutique Aria · San José</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIÉNES SOMOS ============ -->
+<section class="about" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-portrait reveal">
+      <span class="about-flag"><span class="flag-cr" aria-hidden="true"></span> Costa Rica</span>
+      <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="abg" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#2f6bff"/><stop offset=".55" stop-color="#1c3fb0"/><stop offset="1" stop-color="#22d3a5"/>
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#abg)"/>
+        <circle cx="100" cy="80" r="34" fill="#fff" opacity=".95"/>
+        <path d="M40 200 C 40 140, 160 140, 160 200 Z" fill="#fff" opacity=".95"/>
+        <g opacity=".55" stroke="#fff" stroke-width="2" fill="none">
+          <path d="M0 160 Q 50 140 100 160 T 200 160"/>
+          <path d="M0 175 Q 50 155 100 175 T 200 175"/>
+        </g>
+      </svg>
+    </div>
+    <div class="about-side">
+      <span class="eyebrow reveal">Quiénes somos</span>
+      <h2 class="reveal d1">Somos ticos ayudando a ticos a <span class="ink-accent">escuchar mejor</span> sus negocios.</h2>
+      <p class="reveal d2">Decibel nació en San José, pensado para la realidad de la PYME costarricense: el dueño que hace de todo, la libreta al lado de la caja, los gastos hormiga que se comen la utilidad.</p>
+      <p class="reveal d2">Combinamos experiencia en finanzas, datos y operaciones para traducir el día a día del negocio en señales claras que cualquier persona puede entender — sin tecnicismos, sin jerga importada.</p>
+      <div class="about-signature reveal d3">"Si su negocio le habla y nadie le escucha, nosotros le ponemos los audífonos." — <strong>Equipo Decibel</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="preguntas">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow reveal">Preguntas frecuentes</span>
+      <h2 class="reveal d1">Lo que toda PYME tica nos pregunta primero.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal d1"><summary>¿Cuánto cuesta el diagnóstico? <span class="faq-plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body">Nada. La primera consulta y el diagnóstico inicial son gratis y sin compromiso. Si después decide trabajar con nosotros, le explicamos los planes con total transparencia — sin letras pequeñas.</div></details>
+      <details class="faq-item reveal d1"><summary>¿Necesito tener todo en Excel o en un sistema? <span class="faq-plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body">No. Trabajamos con lo que usted tenga: cuaderno, Excel, fotos del SINPE, recibos físicos. Nosotros le ayudamos a ordenarlo. La idea no es que cambie todo de un día para otro, sino empezar a leer las señales que ya están ahí.</div></details>
+      <details class="faq-item reveal d2"><summary>¿Es seguro compartir información de mi negocio? <span class="faq-plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body">Sí. Sus datos no se comparten ni se venden a terceros. Firmamos confidencialidad si lo prefiere y cumplimos con la Ley 8968 de Protección de Datos de Costa Rica.</div></details>
+      <details class="faq-item reveal d2"><summary>¿Cuánto tarda en verse resultados? <span class="faq-plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body">El diagnóstico inicial le da claridad en la primera reunión. Los primeros ajustes —los más simples— suelen notarse en 2 a 4 semanas. La mejora sostenida depende de qué tan rápido aplique las recomendaciones, pero le acompañamos en cada paso.</div></details>
+      <details class="faq-item reveal d3"><summary>¿Funciona si soy un negocio muy pequeño o si apenas voy empezando? <span class="faq-plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body">Sí, justamente para eso lo diseñamos. Sodas, pulperías, emprendimientos en línea, salones, talleres pequeños — todos tienen señales que vale la pena escuchar. Cuanto antes empiece, mejor.</div></details>
+    </div>
+  </div>
+</section>
+
 <section class="book" id="agendar">
   <div class="container book-grid">
     <div class="book-side">
@@ -608,13 +997,18 @@
       <p class="reveal d2">Le mostramos qué señales podemos leer en su negocio y cómo se vería su primer reporte Decibel. Usted decide después.</p>
       <ul class="perks reveal d3">
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> 20 minutos por videollamada o teléfono</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Le confirmamos por correo y le enviamos recordatorio</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Le confirmamos por el canal que prefiera</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> No necesita preparar nada técnico</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Hablamos en idioma de negocio, no de software</li>
       </ul>
     </div>
 
     <div class="book-card reveal d2">
+      <div class="book-tabs" role="tablist">
+        <button class="book-tab active" data-tab="form" role="tab" aria-selected="true" type="button">Reservar cita</button>
+        <button class="book-tab" data-tab="quick" role="tab" aria-selected="false" type="button">Contactar rápido</button>
+      </div>
+      <div class="book-pane active" data-pane="form">
       <form id="bookForm" novalidate>
         <div class="form-row">
           <div class="field">
@@ -622,18 +1016,8 @@
             <input id="bName" name="name" type="text" autocomplete="name" required placeholder="Su nombre" />
           </div>
           <div class="field">
-            <label for="bBiz">Negocio</label>
-            <input id="bBiz" name="business" type="text" autocomplete="organization" placeholder="Nombre del negocio" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="bEmail">Correo</label>
-            <input id="bEmail" name="email" type="email" autocomplete="email" required placeholder="correo@sunegocio.com" />
-          </div>
-          <div class="field">
-            <label for="bPhone">Teléfono (opcional)</label>
-            <input id="bPhone" name="phone" type="tel" autocomplete="tel" placeholder="+506 0000 0000" />
+            <label for="bContact">WhatsApp o correo</label>
+            <input id="bContact" name="contact" type="text" autocomplete="email tel" required placeholder="+506 0000 0000 o correo@negocio.com" />
           </div>
         </div>
         <div class="form-row">
@@ -655,10 +1039,6 @@
           <div class="slots" id="bSlots" role="radiogroup" aria-label="Horario"></div>
           <input type="hidden" id="bTime" name="time" required />
         </div>
-        <div class="field" style="margin-bottom:6px">
-          <label for="bNotes">¿Qué le gustaría revisar primero? (opcional)</label>
-          <textarea id="bNotes" name="notes" placeholder="Ej: siento que vendo más pero gano menos…"></textarea>
-        </div>
         <div class="book-actions">
           <span class="book-note">Le confirmamos en menos de 1 día hábil.</span>
           <button type="submit" class="btn btn-primary">
@@ -671,7 +1051,86 @@
       <div class="book-success" id="bookSuccess" aria-live="polite">
         <div class="tick" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg></div>
           <h3>¡Cita reservada!</h3>
-          <p id="bookSummary">Le enviamos la confirmación por correo.</p>
+          <p id="bookSummary">Le enviamos la confirmación por el canal que eligió.</p>
+      </div>
+      </div>
+      <div class="book-pane" data-pane="quick">
+        <div class="quick-actions">
+          <a class="quick-btn wa" id="quickWa" href="#" target="_blank" rel="noopener">
+            <span class="qicon"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.6.1s-1.1-.4-2-1.3c-.8-.7-1.3-1.6-1.5-1.8s0-.4.1-.5l.4-.4c.1-.1.2-.2.2-.4s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4 0-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3z"/></svg></span>
+            <span class="qtext"><strong>Escríbanos por WhatsApp</strong><small>Respondemos en horario hábil</small></span>
+          </a>
+          <a class="quick-btn mail" href="mailto:hola@decibel.cr?subject=Quiero%20saber%20m%C3%A1s%20sobre%20Decibel">
+            <span class="qicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="qtext"><strong>Envíenos un correo</strong><small>hola@decibel.cr</small></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-design" id="producto">
+  <div class="container product-grid">
+    <div class="product-copy">
+      <span class="eyebrow reveal">Producto Decibel</span>
+      <h2 class="reveal d1">Un producto pensado para que usted vea qué mover hoy, sin hundirse en hojas ni reportes pesados.</h2>
+      <p class="reveal d2">Decibel resume la señal general del negocio, marca las alertas reales y aterriza acciones concretas para la semana. Claro, rápido y útil.</p>
+      <div class="product-stack">
+        <article class="product-feature reveal d1">
+          <div class="picon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 17l5-5 4 4 7-8"/><path d="M14 8h6v6"/></svg></div>
+          <div><strong>Señal general en segundos</strong><p>Una lectura simple del negocio para saber si va fino, si se está ensuciando o si ya hay que intervenir.</p></div>
+        </article>
+        <article class="product-feature reveal d2">
+          <div class="picon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.86L1.82 18a2 2 0 001.7 3h16.96a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
+          <div><strong>Alertas antes de que duelan</strong><p>Delivery caro, clientes que no regresan, margen que baja: Decibel lo pone al frente antes de que se coma la utilidad.</p></div>
+        </article>
+        <article class="product-feature reveal d3">
+          <div class="picon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <div><strong>Acciones concretas, no teoría</strong><p>Cada semana termina con recomendaciones claras para subir margen, ordenar gastos o cuidar recompras.</p></div>
+        </article>
+      </div>
+    </div>
+    <div class="product-showcase reveal d2">
+      <div class="product-shell">
+        <div class="product-top">
+          <div class="product-brand">
+            <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-mark"/></svg>
+            <div>
+              <strong>Decibel Pulse</strong>
+              <span>Resumen semanal del negocio</span>
+            </div>
+          </div>
+          <div class="product-pill">Producto</div>
+        </div>
+        <div class="product-board">
+          <div class="product-panel">
+            <div class="product-kpi">
+              <div>
+                <small>Señal general</small>
+                <div class="big">74 dB</div>
+              </div>
+              <p>El negocio va bien, pero delivery y recompras ya están pidiendo atención.</p>
+            </div>
+            <div class="product-bars">
+              <div class="product-bar"><span>Ventas</span><div class="product-track"><div class="product-fill" style="width:82%"></div></div><strong>82</strong></div>
+              <div class="product-bar"><span>Margen</span><div class="product-track"><div class="product-fill warn" style="width:63%"></div></div><strong>63</strong></div>
+              <div class="product-bar"><span>Recompra</span><div class="product-track"><div class="product-fill danger" style="width:41%"></div></div><strong>41</strong></div>
+            </div>
+          </div>
+          <div class="product-panel">
+            <h4>Acciones de esta semana</h4>
+            <ul class="product-actions">
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Suba el combo de desayuno premium y mida margen por ticket.</li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Revise la tarifa de delivery: está drenando utilidad sin levantar ventas.</li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Contacte a 12 clientes que no han vuelto en 30 días.</li>
+            </ul>
+            <div class="product-mini">
+              <strong>Próxima alerta</strong>
+              <p>Si el margen baja 5 puntos más, Decibel lo marca antes del cierre de semana para que actúe a tiempo.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -689,12 +1148,51 @@
 </section>
 
 <footer>
-  <div class="container footer-inner">
-    <div class="logo">
-      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-mark"/></svg>
-      Decibel
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-mark"/></svg>
+        Decibel
+      </div>
+      <p>Señales claras para que la PYME tica decida mejor — sin tecnicismos, sin ruido.</p>
     </div>
-    <div>© <span id="year"></span> Decibel · Señales claras para decidir mejor</div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a id="footWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5z"/></svg> WhatsApp</a></li>
+        <li><a href="mailto:hola@decibel.cr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> hola@decibel.cr</a></li>
+        <li><a href="#agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Agendar cita</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Recursos</h5>
+      <ul>
+        <li><a href="#diagnostico">Diagnóstico gratis</a></li>
+        <li><a href="#como">Cómo funciona</a></li>
+        <li><a href="#producto">Producto</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        <li><a href="#nosotros">Quiénes somos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#" data-modal="privacyModal">Política de privacidad</a></li>
+        <li><a href="#" data-modal="termsModal">Términos de uso</a></li>
+      </ul>
+      <h5 style="margin-top:18px">Síganos</h5>
+      <div class="social">
+        <!-- TODO: reemplazar # con URLs reales -->
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.2.4-2 2-2h2V2.1C16.6 2 15.4 2 14.2 2 11.6 2 10 3.6 10 6.5V10H7v4h3v8h3z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <div>© <span id="year"></span> Decibel · Todos los derechos reservados</div>
+    <div class="made"><span class="flag-cr" aria-hidden="true"></span> Hecho en Costa Rica con orgullo</div>
   </div>
 </footer>
 
@@ -703,10 +1201,78 @@
   Agendar cita
 </a>
 
+<!-- WhatsApp FAB -->
+<a class="wa-fab" id="waFab" href="#" target="_blank" rel="noopener" aria-label="Conversar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.6.1s-1.1-.4-2-1.3c-.8-.7-1.3-1.6-1.5-1.8s0-.4.1-.5l.4-.4c.1-.1.2-.2.2-.4s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4 0-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+  <span class="wa-tip">¿Conversamos por WhatsApp?</span>
+</a>
+
+<!-- Privacy modal -->
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privTitle">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Cerrar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h3 id="privTitle">Política de privacidad</h3>
+    <p>En Decibel respetamos su información y la de su negocio. Cumplimos con la <strong>Ley 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales</strong> de Costa Rica.</p>
+    <h4>Qué recopilamos</h4>
+    <ul><li>Datos de contacto que usted nos comparte (nombre, correo, teléfono, negocio).</li><li>Respuestas del diagnóstico, solo para entregarle resultados.</li></ul>
+    <h4>Cómo usamos sus datos</h4>
+    <ul><li>Para enviarle su diagnóstico y propuestas relacionadas.</li><li>Nunca vendemos ni compartimos sus datos con terceros.</li></ul>
+    <h4>Sus derechos</h4>
+    <p>Puede solicitar acceso, rectificación o eliminación de sus datos en cualquier momento escribiendo a <a href="mailto:hola@decibel.cr">hola@decibel.cr</a>.</p>
+  </div>
+</div>
+
+<!-- Terms modal -->
+<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Cerrar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h3 id="termsTitle">Términos de uso</h3>
+    <p>Al usar el sitio y los servicios de Decibel, usted acepta estos términos. Decibel ofrece servicios de diagnóstico y consultoría para PYMES.</p>
+    <h4>Uso del diagnóstico</h4>
+    <p>El diagnóstico inicial es gratuito y de carácter informativo. Las recomendaciones se basan en la información que usted provee y no constituyen asesoría legal, contable ni tributaria formal.</p>
+    <h4>Servicios pagos</h4>
+    <p>Los planes con cobro se acuerdan por escrito antes de cualquier compromiso económico. Sin sorpresas ni renovaciones automáticas sin su autorización.</p>
+    <h4>Contacto</h4>
+    <p>Para consultas legales: <a href="mailto:hola@decibel.cr">hola@decibel.cr</a></p>
+  </div>
+</div>
+
 <script>
 (() => {
   const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+
+  // TODO: reemplazar con el número real de WhatsApp (incluir código de país 506)
+  const WA_NUMBER = '50688888888';
+  const WA_MSG_DEFAULT = 'Hola Decibel, me interesa saber más sobre el diagnóstico de mi negocio.';
+  const waUrl = (msg = WA_MSG_DEFAULT) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+  const waFab = $('#waFab'); if (waFab) waFab.href = waUrl();
+  const footWa = $('#footWa'); if (footWa) footWa.href = waUrl();
+  const quickWa = $('#quickWa'); if (quickWa) quickWa.href = waUrl();
+
+  // Modals
+  $$('[data-modal]').forEach(t => t.addEventListener('click', e => {
+    e.preventDefault();
+    const m = document.getElementById(t.dataset.modal);
+    if (m) m.classList.add('open');
+  }));
+  $$('.modal').forEach(m => {
+    m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+    const c = m.querySelector('.modal-close');
+    if (c) c.addEventListener('click', () => m.classList.remove('open'));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') $$('.modal.open').forEach(m => m.classList.remove('open'));
+  });
+
+  // Book tabs
+  const tabs = $$('.book-tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+    t.classList.add('active'); t.setAttribute('aria-selected','true');
+    $$('.book-pane').forEach(p => p.classList.toggle('active', p.dataset.pane === t.dataset.tab));
+  }));
 
   $('#year').textContent = new Date().getFullYear();
 
@@ -943,12 +1509,12 @@
 
   $('#bookForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = $('#bName'), email = $('#bEmail'), date = $('#bDate');
+    const name = $('#bName'), contact = $('#bContact'), date = $('#bDate');
     let ok = true;
-    [name, email, date].forEach(el => setInvalid(el.parentElement, false));
+    [name, contact, date].forEach(el => setInvalid(el.parentElement, false));
 
     if (!name.value.trim()) { setInvalid(name.parentElement, true); ok = false; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setInvalid(email.parentElement, true); ok = false; }
+    if (!contact.value.trim()) { setInvalid(contact.parentElement, true); ok = false; }
     if (!date.value) { setInvalid(date.parentElement, true); ok = false; }
     if (!bTime.value) {
       slotsEl.animate(
@@ -961,7 +1527,17 @@
 
     const d = new Date(date.value+'T00:00:00');
     const dStr = d.toLocaleDateString('es-CR', {weekday:'long', day:'numeric', month:'long'});
-    $('#bookSummary').textContent = `Nos vemos el ${dStr} a las ${bTime.value}. Le enviamos la confirmación a ${email.value.trim()}.`;
+    const channel = ($('#bChannel') && $('#bChannel').value) || '';
+    const contactValue = contact.value.trim();
+
+    if (channel === 'whatsapp') {
+      const msg = `Hola Decibel, soy ${name.value.trim()}. `
+        + `Quiero agendar una cita el ${dStr} a las ${bTime.value}. `
+        + `Mi contacto es: ${contactValue}.`;
+      window.open(waUrl(msg), '_blank');
+    }
+
+    $('#bookSummary').textContent = `Nos vemos el ${dStr} a las ${bTime.value}. Le confirmamos por ${contactValue}.`;
     $('#bookForm').style.display = 'none';
     $('#bookSuccess').classList.add('show');
     $('#bookSuccess').scrollIntoView({behavior:'smooth', block:'center'});
